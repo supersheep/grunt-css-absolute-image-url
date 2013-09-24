@@ -32,11 +32,29 @@ module.exports = function(grunt) {
     css_absolute_image_url: {
       all: {
         options: {
+          /**
+           * Grunt can only know the files to process,
+           * it would not know which is the root directory of your source files
+           * so here we tell it, so that the task can replace it with to `root` option
+           */
           dir:"test/fixtures",
-          root:"public",
-          hosts:["i1.cdn.com","i2.cdn.com","i3.cdn.com"], // image host hashes
-          no_version:true, // clear ver
-          md5:true, // add md5 after 
+          /**
+           * online static file root path
+           * this will be used to replace `dir` in the final path
+           */
+          root:"public", 
+          /**
+           * image host hashes
+           */
+          hosts:["i1.cdn.com","i2.cdn.com","i3.cdn.com"], 
+          /**
+           * whether to clear version
+           */
+          no_version:true,
+          /**
+           * whether to add md5 after
+           */
+          md5:true, 
           allow_image_miss:true
         },
         files: [{expand: true, cwd:"test/fixtures/", src: ['**/*.css'], dest: 'dest/', filter: 'isFile',  ext: '.css'}]
