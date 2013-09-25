@@ -30,7 +30,14 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('css_absolute_image_url', 'Your task description goes here.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     
+
+    var src = this.data.src;
+    var files = grunt.file.expandMapping("**/*.css",this.data.dest,{
+      cwd:src
+    });
+
     var options = this.options({
+      dir:src,
       no_version:true,
       md5:false,
       allow_image_miss:false,
@@ -38,7 +45,7 @@ module.exports = function(grunt) {
     });
 
     // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
+    files.forEach(function(f) {
       
       var parsed = "";
       f.src.forEach(function(path,i){

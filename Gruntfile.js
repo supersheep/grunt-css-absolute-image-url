@@ -31,13 +31,9 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     css_absolute_image_url: {
       all: {
+        src:"test/fixtures",
+        dest:"dest",
         options: {
-          /**
-           * Grunt can only know the files to process,
-           * it would not know which is the root directory of your source files
-           * so here we tell it, so that the task can replace it with to `root` option
-           */
-          dir:"test/fixtures",
           /**
            * online static file root path
            * this will be used to replace `dir` in the final path
@@ -56,8 +52,7 @@ module.exports = function(grunt) {
            */
           md5:true, 
           allow_image_miss:true
-        },
-        files: [{expand: true, cwd:"test/fixtures/", src: ['**/*.css'], dest: 'dest/', filter: 'isFile',  ext: '.css'}]
+        }
       }
     },
 
