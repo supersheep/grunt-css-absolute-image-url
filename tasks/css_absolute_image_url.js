@@ -32,13 +32,14 @@ module.exports = function(grunt) {
     
 
     var src = this.data.src;
+    var dest = this.data.dest || src;
     var files = grunt.file.expandMapping("**/*.css",this.data.dest,{
       cwd:src
     });
 
     var options = this.options({
       src:src,
-      dest:this.data.dest,
+      dest:dest,
       no_version:true,
       md5:false,
       allow_image_miss:false,
