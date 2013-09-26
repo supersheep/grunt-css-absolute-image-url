@@ -9,6 +9,7 @@
 'use strict';
 var grunt = require("grunt");
 var Parser = require("../lib/cssparser");
+var path = require("path");
 
 var removeInvalidFiles = function(files) {
   return files.src.filter(function(filepath) {
@@ -29,25 +30,21 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('css-absolute-image-url', 'Your task description goes here.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
-    
 
-    var src = this.data.src;
-    var dest = this.data.dest || src;
-    var files = grunt.file.expandMapping("**/*.css",this.data.dest,{
-      cwd:src
-    });
+    // var files = grunt.file.expandMapping("**/*.css",this.data.dest,{
+    //   cwd:src
+    // });
 
     var options = this.options({
-      src:src,
-      dest:dest,
       no_version:true,
       md5:false,
       allow_image_miss:false,
       cwd:process.cwd()
     });
 
+
     // Iterate over all specified file groups.
-    files.forEach(function(f) {
+    this.files.forEach(function(f) {
       
       var parsed = "";
       f.src.forEach(function(path,i){

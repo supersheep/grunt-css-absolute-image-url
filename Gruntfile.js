@@ -29,11 +29,15 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    css_absolute_image_url: {
+    "css-absolute-image-url": {
       all: {
-        src:"test/fixtures",
-        dest:"dest",
         options: {
+          /**
+           * Grunt can only know the files to process,
+           * it would not know which is the root directory of your source files
+           * so here we tell it, so that the task can replace it with to `root` option
+           */
+          src:"test/fixtures",
           /**
            * online static file root path
            * this will be used to replace `dir` in the final path
@@ -52,7 +56,13 @@ module.exports = function(grunt) {
            */
           md5:true, 
           allow_image_miss:true
-        }
+        },
+        files:[{
+          expand:true,
+          src:"**/*.css",
+          cwd:"test/fixtures",
+          dest:"dest"
+        }]
       }
     },
 
@@ -73,7 +83,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'css_absolute_image_url', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'css-absolute-image-url', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint','test']);
