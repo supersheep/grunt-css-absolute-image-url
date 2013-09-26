@@ -37,7 +37,8 @@ module.exports = function(grunt) {
     });
 
     var options = this.options({
-      dir:src,
+      src:src,
+      dest:this.data.dest,
       no_version:true,
       md5:false,
       allow_image_miss:false,
