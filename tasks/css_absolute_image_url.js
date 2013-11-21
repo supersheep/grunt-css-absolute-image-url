@@ -9,7 +9,7 @@
 'use strict';
 var grunt = require("grunt");
 var Parser = require("../lib/cssparser");
-var path = require("path");
+var node_path = require("path");
 
 var removeInvalidFiles = function(files) {
   return files.src.filter(function(filepath) {
@@ -34,7 +34,6 @@ module.exports = function(grunt) {
     // var files = grunt.file.expandMapping("**/*.css",this.data.dest,{
     //   cwd:src
     // });
-
     var options = this.options({
       no_version:true,
       md5:false,
@@ -45,9 +44,9 @@ module.exports = function(grunt) {
 
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
-      
       var parsed = "";
       f.src.forEach(function(path,i){
+        path = node_path.resolve(path);
         parsed += new Parser(options).parse(path) + (i < f.length+1 ? "\r\n" : "");
       });
 

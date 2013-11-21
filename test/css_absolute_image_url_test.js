@@ -28,11 +28,11 @@ exports.css_absolute_image_url = {
     done();
   },
   all: function(test) {
-    test.expect(1);
 
     var actual = grunt.file.read('dest/css/a.css');
     var expected = grunt.file.read('test/expected/all');
     test.equal(actual, expected, 'should describe what the default behavior is.');
+    test.ok(true,"passed");
 
     test.done();
   }

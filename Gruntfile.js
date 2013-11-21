@@ -37,7 +37,7 @@ module.exports = function(grunt) {
            * it would not know which is the root directory of your source files
            * so here we tell it, so that the task can replace it with to `root` option
            */
-          src:"test/fixtures",
+          source:"test/fixtures",
           /**
            * online static file root path
            * this will be used to replace `dir` in the final path
