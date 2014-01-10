@@ -1,7 +1,7 @@
 {
   "name": "grunt-css-absolute-image-url",
   "description": "replace relative css path to absolute path",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "homepage": "https://github.com/supersheep/grunt-css-absolute-image-url",
   "author": {
     "name": "supersheep",
@@ -30,8 +30,8 @@
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-nodeunit": "~0.1.2",
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-contrib-nodeunit": "~0.2.2"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"

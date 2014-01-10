@@ -1,4 +1,4 @@
 .head .link1{background-image:url(http://i3.cdn.com/public/css/img/a.89ad04b965b81565903ee98aa1a9d6f9.png);}
 .head .link2{background-image:url(http://i1.cdn.com/public/css/img/b.89ad04b965b81565903ee98aa1a9d6f9.png);}
-.head .link3{background-image:url(http://i1.cdn.com/public/css/img/b.89ad04b965b81565903ee98aa1a9d6f9.png);}
+.head .link3{background-image:url(http://i1.cdn.com/public/css/img/b.89ad04b965b81565903ee98aa1a9d6f9.png#hash);}
 .head .link3{background-image:url("http://www.dianping.com/img/b.v231.png");}

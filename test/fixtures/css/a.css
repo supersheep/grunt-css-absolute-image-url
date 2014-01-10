@@ -1,4 +1,4 @@
 .head .link1{background-image:url("./img/a.png");}
 .head .link2{background-image:url("./img/b.png");}
-.head .link3{background-image:url("./img/b.png");}
+.head .link3{background-image:url("./img/b.png#hash");}
 .head .link3{background-image:url("http://www.dianping.com/img/b.v231.png");}
