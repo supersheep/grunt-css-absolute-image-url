@@ -2,3 +2,4 @@
 .head .link2{background-image:url(http://i1.cdn.com/public/css/img/b.89ad04b965b81565903ee98aa1a9d6f9.png);}
 .head .link3{background-image:url(http://i1.cdn.com/public/css/img/b.89ad04b965b81565903ee98aa1a9d6f9.png?a=1#hash);}
 .head .link3{background-image:url("http://www.dianping.com/img/b.v231.png");}
+.head .link3{background-image:url("about:blank");}
